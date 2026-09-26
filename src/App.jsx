@@ -5,27 +5,27 @@ import './App.css';
 const initialEmployees = [
   {
     id: "EMP001",
-    name: "John Doe",
+    name: "Rahul Sharma",
     department: "Engineering",
     gender: "Male",
-    phone: "1234567890",
-    localAddress: "123 Main St, City",
-    permanentAddress: "456 Oak St, Town"
+    phone: "9876543210",
+    localAddress: "Sector V, Salt Lake, Kolkata",
+    permanentAddress: "MG Road, Pune"
   },
   {
     id: "EMP002",
-    name: "Jane Smith",
+    name: "Priya Patel",
     department: "HR",
     gender: "Female",
-    phone: "0987654321",
-    localAddress: "789 Pine St, City",
-    permanentAddress: "789 Pine St, City"
+    phone: "8765432109",
+    localAddress: "Koramangala, Bengaluru",
+    permanentAddress: "Andheri West, Mumbai"
   }
 ];
 
 export default function App() {
   const [employees, setEmployees] = useState(() => {
-    const saved = localStorage.getItem('employeeData');
+    const saved = localStorage.getItem('employeeDataV2');
     return saved ? JSON.parse(saved) : initialEmployees;
   });
 
@@ -45,7 +45,7 @@ export default function App() {
   const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('employeeData', JSON.stringify(employees));
+    localStorage.setItem('employeeDataV2', JSON.stringify(employees));
   }, [employees]);
 
   const handleInputChange = (e) => {
